@@ -1,11 +1,11 @@
 export interface Movie {
-    id: number;
-    title: string;
-    // Adicione outras propriedades relevantes que a API retorna, como:
-    poster_path: string;
-    overview: string;
-    release_date: string;
-    // etc.
+  id: number;
+  title: string;
+  poster_path: string;
+  overview: string;
+  release_date: string;
+  backdrop_path: string; // Adicione esta linha
+  genre_ids: number[];
   }
   
   export interface MoviesResponse {

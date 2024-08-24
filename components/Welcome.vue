@@ -6,7 +6,7 @@
          :src="`https://image.tmdb.org/t/p/w500/${movies.results[0].backdrop_path}`" 
          alt="Movie Poster">
     
-    <div class="absolute inset-0 bg-black/90"></div>
+    <div class="absolute inset-0 bg-black/80"></div>
     
     <div class="relative w-3/6 grid grid-rows-3 p-4">
       <p class="font-poppins text-3xl font-bold">{{ movies.results[0].title }}</p>
@@ -14,6 +14,9 @@
       <p class="text-xl">{{ movies.results[0].overview }}</p>
     </div>
   </div>
+
+ 
+
 </template>
 
 <script setup lang="ts">
@@ -32,4 +35,9 @@ onMounted(async () => {
   movies.value = data;
   error.value = fetchError;
 });
+
+
+
+
+
 </script>

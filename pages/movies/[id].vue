@@ -1,4 +1,5 @@
 <template>
+  <NuxtLayout ></NuxtLayout>
     <div v-if="error">Erro: {{ error.message }}</div>
     <div v-else-if="movie" class="p-10 sm:p-24 flex gap-4 sm:flex-row h-44 bg-cover bg-center relative"
          :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie.backdrop_path})` }">

@@ -2,9 +2,9 @@
 <template>
   
    <div class="flex">
-        <NavMenu />
+       
     
-        <MainApp  />
+        <HomePage  />
       
      
    </div>
@@ -16,7 +16,11 @@
 </template>
 
     
-<style scooped>
+<style >
 
+   
 
 </style>
+
+<script>
+</script>

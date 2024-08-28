@@ -1,30 +1,30 @@
 <template>
   <div>
-    <h2 class="p-12 font-poppins text-3xl font-bold">
-      Top da Semana!
+    <h2 class="p-10 font-poppins text-xl font-bold">
+      Popular
     </h2>
     
     <UCarousel 
       v-slot="{ item }" 
       :items="items" 
       :ui="{ 
-        item: 'basis-full md:basis-56 lg:basis-56 flex-shrink-0' 
+        item: 'basis-44 md:basis-56 lg:basis-56 flex-shrink-0' 
       }" 
       indicators 
       class="rounded-lg overflow-hidden flex "
     >
-      <div class="relative w-[200px] h-[350px]  gap-4 group  ">
+      <div class="relative w-[150px] h-[250px]  gap-4 group  ">
         <div 
           class="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out  " 
           :style="{ backgroundImage: `url(${item.imageUrl})` }">
         </div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-white p-2 bg-black bg-opacity-80 rounded-lg">
+        <div class=" hidden sM absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-white p-2 bg-black bg-opacity-80 rounded-lg">
           <div class="grid grid-rows-[auto,auto,1fr] gap-2 p-4">
   <ul class="flex flex-col row-span-1">
-    <li class="text-sm text-slate-400 font-bold " v-for="(genre, index) in item.genres" :key="index">{{ genre }}</li>
+    <li class="text-sm text-slate-400 font-bold hidden " v-for="(genre, index) in item.genres" :key="index">{{ genre }}</li>
   </ul>
-  <p class="font-bold text-center row-span-1 text-base">{{ item.title }}</p>
-  <p class=" text-center text-sm row-span-1">{{ item.description }}</p>
+  <p class="font-bold text-center row-span-1 text-base hidden">{{ item.title }}</p>
+  <p class=" text-center text-sm row-span-1 hidden" >{{ item.description }}</p>
 </div>
 
 
@@ -51,7 +51,7 @@ function truncateText(text: string, maxLength: number): string {
 
 const movies = ref<MoviesResponse | null>(null);
 const error = ref<Error | null>(null);
-const items = ref<{ imageUrl: string, title: string, genres: string[], description: string [] }[]>([]);
+const items = ref<{ imageUrl: string, title: string, genres: string[], description: string }[]>([]);
 const { getGenreNames } = useGenres();
 
 onMounted(async () => {
